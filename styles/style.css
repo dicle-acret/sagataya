@@ -1,0 +1,229 @@
+html {
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 600px;
+}
+
+.page-info {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    padding: 10px 0px;
+    font-size: 14px;
+}
+
+p{
+    line-height: 2.5;
+    padding-left: 30px;
+}
+
+
+.title {
+    background-color: #d5e4ff;
+    padding: 20px;
+    border-left: 8px solid #1a3a7d;
+}
+
+.subtitle {
+    background-color: #f0f0f0;
+    padding: 5px 20px;
+    border-left: 8px solid #1a3a7d;
+    border-bottom: 4px solid rgb(172, 172, 172);
+    margin-top: 60px;
+}
+
+.subtitle-small {
+    padding: 5px 0px;
+    border-bottom: 2px solid rgb(172, 172, 172);
+}
+
+
+.contents-wrapper {
+    position: relative;
+    margin: 40px 0px;
+}
+
+.contents {
+    position: relative;
+    padding: 20px 20px;
+    background-color: white;
+}
+
+/* Top-left corner */
+.contents::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 80px;
+    border-top: 2px solid #333;
+    border-left: 2px solid #333;
+}
+
+/* Bottom-right corner */
+.contents-wrapper::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    height: 80px;
+    border-bottom: 2px solid #333;
+    border-right: 2px solid #333;
+    z-index: 1;
+}
+
+.title-wrapper {
+    position: relative;
+    margin: 40px 0px;
+
+}
+
+.title-wrapper::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 180px;
+    height: 80px;
+    border-bottom: 2px solid #1a3a7d;;
+    z-index: 1;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    background-color: white;
+}
+
+.schedule-table thead {
+    background-color: #d9d9d9;
+}
+
+.schedule-table th {
+    padding: 15px 20px;
+    text-align: left;
+    font-weight: bold;
+    border: 1px solid #ccc;
+}
+
+.schedule-table td {
+    padding: 20px;
+    border: 1px solid #ccc;
+    vertical-align: center;
+}
+
+/* First column (回) */
+.schedule-table td:first-child {
+    text-align: center;
+    font-weight: bold;
+    width: 60px;
+}
+
+/* Second column (開催日時) */
+.schedule-table td:nth-child(2) {
+    width: 0.2;
+}
+
+/* Third column (セミナーテーマ・講師) */
+.schedule-table td:nth-child(3) {
+    width: 0.5;
+    line-height: 1.6;
+}
+
+/* Fourth column (会場) */
+.schedule-table td:nth-child(4) {
+    width: 0.3;
+}
+
+
+.img-box {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+    padding-left: 30px;
+}
+
+.img-seminar {
+    max-width: 300px;
+}
+
+.img-text {
+    margin: 0px;
+    padding: 0px;
+    line-height: 1;
+}
+
+.title-with-lines {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 60px;
+}
+
+
+.title-with-lines::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background-color: #333;
+}
+
+.icon-box {
+  display: inline-block;
+  background-color: #a51515;
+  color: white;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: bold;
+  width: 80px;
+  margin: auto;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.info-box {
+    border: 1px solid #c4c4c4;
+    margin-top: 40px;
+}
+
+.contact-title {
+    background-color: #f0f0f0;
+    padding: 10px; 
+    padding-left: 30px;
+}
+
+.others-info-links {
+    display: flex;
+    flex-direction: row;
+   
+
+}
+
+.others-info-title {
+    padding: 10px; 
+    padding-left: 30px;
+}
+
+.hover-liner::after {
+    content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #007bff;
+            transition: width 0.3s ease;
+
+}
+
+.hover-liner::after {
+    width: 100%;
+}
+            
+            
