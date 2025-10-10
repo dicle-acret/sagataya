@@ -3,6 +3,7 @@ html {
     margin: 0 auto;
     font-family: Arial, Helvetica, sans-serif;
     padding-bottom: 600px;
+      scroll-behavior: smooth;
 }
 
 .page-info {
