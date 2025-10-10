@@ -15,7 +15,13 @@ html {
 
 p{
     line-height: 2.5;
+    text-indent: 30px;
+}
+
+.p-no-indent{
     padding-left: 30px;
+    text-indent: 0px;
+
 }
 
 
@@ -38,6 +44,9 @@ p{
     border-bottom: 2px solid rgb(172, 172, 172);
 }
 
+.list-sub {
+    padding-left: 70px;
+}
 
 .contents-wrapper {
     position: relative;
@@ -58,8 +67,8 @@ p{
     left: 0;
     width: 300px;
     height: 80px;
-    border-top: 2px solid #333;
-    border-left: 2px solid #333;
+    border-top: 1px solid #333;
+    border-left: 1px solid #333;
 }
 
 /* Bottom-right corner */
@@ -70,8 +79,8 @@ p{
     right: 0;
     width: 300px;
     height: 80px;
-    border-bottom: 2px solid #333;
-    border-right: 2px solid #333;
+    border-bottom: 1px solid #333;
+    border-right: 1px solid #333;
     z-index: 1;
 }
 
@@ -147,10 +156,14 @@ p{
     align-items: start;
     gap: 10px;
     padding-left: 30px;
+    width: 200px;
+    height: 200px;
 }
 
 .img-seminar {
-    max-width: 300px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .img-text {
@@ -168,7 +181,7 @@ p{
 
 
 .title-with-lines::after {
-  content: '';
+  content: none;
   flex: 1;
   height: 1px;
   background-color: #333;
@@ -211,7 +224,7 @@ p{
 }
 
 .hover-liner::after {
-    content: '';
+    content: none;
             position: absolute;
             bottom: 0;
             left: 0;
