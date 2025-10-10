@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>テストページ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="styles/style.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Tangerine&display=swap" rel="stylesheet">
   </head>
@@ -68,7 +69,7 @@
   </thead>
   <tbody>
     <tr>
-      <td>1</td>
+      <td><strong>1</strong></td>
       <td>7月4日（金曜日）</td>
       <td>
         セミナーテーマ<br>
@@ -77,8 +78,8 @@
       <td>ホール オリオン</td>
     </tr>
     <tr>
-      <td>2</td>
-      <td>10月2日（木曜日）</td>z
+      <td><strong>2</strong></td>
+      <td>10月2日（木曜日）</td>
       <td>
         セミナーテーマ<br>
         「相続対策のすすめ」<br>
@@ -88,7 +89,7 @@
       <td>民会館「イーグレットホール」集会室</td>
     </tr>
     <tr>
-      <td>3</td>
+      <td><strong>3</strong></td>
       <td>11月15日（土曜日）<br>午前開催予定</td>
       <td>未定</td>
       <td>民会館「ホール」集会室</td>
@@ -177,29 +178,105 @@
         <h2>お問い合わせ先</h2>
       </div>
       <div>
-        <p class="p-no-indent">都市整備政策部 居住支援課<br>電話番号：00-0000-0000<br>ファクシミリ：00-0000-0000</p>
+        <p class="p-no-indent">都市整備政策部 居住支援課<br>電話番号：<a href="tel:+0000000000">0000000000</a><br>ファクシミリ：00-0000-0000</p>
       </div>
     </div>
 
     <div class="info-box">
       <div class="others-info-title">
-        <h2>住まいに関する情報・相談・セミナー</h2>
+        <h2 class="hover-liner">住まいに関する情報・相談・セミナー</h2>
       </div>
       <div class="others-info-links">
         <div>
-          <p class="hover-liner">→ Information about family s</p>
-          <p>→ Vacant Houses </p>
-          <p>→ FY2025 "Living and Town Learning" </p>
+          <p class="hover-liner">→ Information about family</p>
+          <p class="hover-liner">→ Vacant Houses </p>
+          <p class="hover-liner">→ FY2025 "Living and Town Learning" </p>
         </div>
         <div>
-          <p>→ Housing Consultation</p>
-          <p>→ Other housing-related consultation services</p>
-          <p>→ Information on Setagaya and housing</p>
+          <p class="hover-liner">→ Housing Consultation</p>
+          <p class="hover-liner">→ Other housing-related consultation services</p>
+          <p class="hover-liner">→ Information on housing</p>
         </div>
       </div>
     </div>
 
+    <div class="carousel-container" id="carousel-popup">
+        <div class="carousel-main">
+            <div class="carousel-left">
+                <h2>世田谷区を知る</h2>
+                <p>Learn about Setagaya City</p>
+            </div>
 
+            <div class="carousel-wrapper" id="carousel">
+                <!-- Slide 1 -->
+                <div class="carousel-item">
+                    <div class="carousel-center">
+                        <div class="carousel-image-container">
+                            <img class="carousel-image" src="https://via.placeholder.com/200?text=Image+1" alt="Slide 1">
+                        </div>
+                        <div class="carousel-center-text">
+                      
+                            <a href="#" class="carousel-text-link">詳細はこちら</a>
+                        </div>
+                    </div>
+                    
+                </div>
 
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <div class="carousel-center">
+                        <div class="carousel-image-container">
+                            <img class="carousel-image" src="https://via.placeholder.com/200?text=Image+2" alt="Slide 2">
+                        </div>
+                        <div class="carousel-center-text">
+                            
+                            <a href="#" class="carousel-text-link">詳細はこちら</a>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-item">
+                    <div class="carousel-center">
+                        <div class="carousel-image-container">
+                            <img class="carousel-image" src="https://via.placeholder.com/200?text=Image+3" alt="Slide 3">
+                        </div>
+                        <div class="carousel-center-text">
+                            
+                            <a href="#" class="carousel-text-link">詳細はこちら</a>
+                        </div>
+                    </div>
+                   
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="carousel-item">
+                    <div class="carousel-center">
+                        <div class="carousel-image-container">
+                            <img class="carousel-image" src="https://via.placeholder.com/200?text=Image+4" alt="Slide 4">
+                        </div>
+                        <div class="carousel-center-text">
+                            
+                            <a href="#" class="carousel-text-link">詳細はこちら</a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="carousel-controls">
+                <div class="carousel-nav">
+                    <button id="prevBtn" onclick="pauseAutoScroll(); scrollCarousel(-1)">←</button>
+                    <button id="nextBtn" onclick="pauseAutoScroll(); scrollCarousel(1)">→</button>
+                </div>
+                <button id="stopBtn" class="carousel-stop playing" onclick="toggleAutoScroll()">⏸ STOP</button>
+                <span class="carousel-counter"><span id="current">1</span> / 6</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/main.js"></script>
+    
   </body>
 </html>
