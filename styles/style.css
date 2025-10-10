@@ -321,7 +321,7 @@ p {
 
 .carousel-center {
     flex: 1;
-    background: #582727;
+    background: #dadada;
     padding: 30px;
     display: flex;
     align-items: center;
@@ -363,7 +363,7 @@ p {
 
 .carousel-center h3 {
     font-size: 18px;
-    color: #333;
+    color: #d3d2d2;
     line-height: 1.5;
 }
 
@@ -393,18 +393,6 @@ p {
 }
 
 
-
-.carousel-right h3 {
-    color: #1976d2;
-    margin-bottom: 10px;
-    font-size: 18px;
-}
-
-.carousel-right p {
-    font-size: 14px;
-    color: #333;
-    margin-bottom: 15px;
-}
 
 .carousel-controls {
     position: absolute;
@@ -471,4 +459,5 @@ p {
     font-weight: bold;
     white-space: nowrap;
 }
+
 
