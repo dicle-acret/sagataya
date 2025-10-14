@@ -4,52 +4,56 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>テストページ</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link href="styles/style.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Tangerine&display=swap" rel="stylesheet">
   </head>
 
   <body>
+  <header>
+  </header>
 
-    <div class="page-info">
-      <span>最終更新日 2025年10月3日</span>
-      <span>ページID 3740</span>
-    </div>
+    <main>
+      <section class="wrap"
+        <div class="page-info">
+          <span>最終更新日 2025年10月3日</span>
+          <span>ページID 3740</span>
+        </div>
 
-    <div class="title">
-      <h1>令和7年度「住まい・まち学習」セミナー・相談会</h1>
-    </div>
+        <div class="title">
+          <h1>令和7年度「住まい・まち学習」セミナー・相談会</h1>
+        </div>
+        <div class="contents-wrapper">
+          <div class="contents">
+            <h3>目次</h3>
+            <ul>
+							<li><a href="#seminar">セミナー</a>
+								<ul class="list-sub">
+										<li><a href="#reiwa-2025">令和7年度開催内容</a></li>
+										<li><a href="#reiwa-2024">令和6年度開催内容</a></li>
+								</ul>
+							</li>
+							<li><a href="#consultation">不動産無料相談会</a>
+								<ul class="list-sub">
+									<li><a href="#audience">対象者・定員</a></li>
+									<li><a href="#cases">主な相談事例</a></li>
+								</ul>
+								</li>
+							<li><a href="#apply">セミナー・相談会の申込について</a></li>
+              <li><a href="#attachments">添付ファイル</a></li>          
+							<li><a href="#links">関連リンク</a></li>
+						</ul>
+          </div>
+        </div>
+      </section>
 
-    <div class="contents-wrapper">
-      <div class="contents">
-        <h3>目次</h3>
-          <ul>
-            <li><a href="#seminar">セミナー</a></li>
-          </ul>
-          <ul class="list-sub">
-              <li><a href="#reiwa-2025">令和7年度開催内容</a></li>
-              <li><a href="#reiwa-2024">令和6年度開催内容</a></li>
-          </ul>
-          <ul>
-            <li><a href="#consultation">不動産無料相談会</a></li>
-          </ul>
-          <ul class="list-sub">
-              <li><a href="#audience">対象者・定員</a></li>
-              <li><a href="#cases">主な相談事例</a></li>
-          </ul>
-          <ul>
-            <li><a href="#apply">セミナー・相談会の申込について</a></li>
-            <li><a href="#links">関連リンク</a></li>
-          </ul>
-      </div>
-    </div>
 
+<section class="wrap">
     <div id="seminar" class="subtitle">
       <h2>セミナー</h2>
-    </div>
-    
-    <div>
-      <p>区民主体の住まい・まちづくりをめざして、「自分たちの住環境を知り・考え・創っていく」をテーマにした講座を行っています。</p>
+      <p class="mt-4">区民主体の住まい・まちづくりをめざして、「自分たちの住環境を知り・考え・創っていく」をテーマにした講座を行っています。</p>
     </div>
 
     <div class="title-wrapper">
@@ -97,8 +101,8 @@
   </tbody>
     </table>
 
-    <div>
-      <p><strong>対象者・定員</strong></p>
+    <div class="target-capacity">
+      <p class="m-0"><strong>対象者・定員</strong></p>
       <p class="p-no-indent">対象者：在勤・在学の方<br>第2回セミナーの定員：90名（事前予約制先着順）</p>
     </div>
 
@@ -129,20 +133,25 @@
     </div>
 
     <div>
-      <p>上記セミナーと同日、同会場にて、弁護士、税理士の専門家が30分間の個別相談に応じます。</p>
+      <p class="mt-4">上記セミナーと同日、同会場にて、弁護士、税理士の専門家が30分間の個別相談に応じます。</p>
     </div>
 
-    <div id="audience" class="title-wrapper">
+    <div id="audience" class="title-wrapper mb-3">
       <div class="subtitle-small">
         <h3>対象者・定員</h3>
       </div>
     </div>
 
-    <div>
-      <p>対象者：在住・在勤・在学の方<br>第2回相談会の定員：40組<br>各専門家（宅地建物取引士（2名）、弁護士（3名）、税理士（3名））が下記相談枠で個別相談に応じます。（事前予約制先着順）<br>相談枠 (1)13時30分から14時00分まで(2)14時10分から14時40分まで<br>(3)14時50分から15時20分まで(4)15時30分から16時00分まで<br>(5)16時10分から16時40分まで<br></p>
+    <div> <!--"add class" -->
+    
+      <p>対象者：在住・在勤・在学の方</p>
+      <p>第2回相談会の定員：40組</p>
+      <p>各専門家（宅地建物取引士（2名）、弁護士（3名）、税理士（3名））が下記相談枠で個別相談に応じます。（事前予約制先着順）</p>
+      <p>相談枠 (1)13時30分から14時00分まで(2)14時10分から14時40分まで</p>  
+      <p>(3)14時50分から15時20分まで(4)15時30分から16時00分まで</p>
+      <p>(5)16時10分から16時40分まで</p>
     </div>
 
-    <div>
       <div id="cases" class="title-wrapper">
         <div class="subtitle-small">
         <h3>主な相談事例</h3>
@@ -152,27 +161,29 @@
         <li>土地や建物の売買の際にかかる税金について</li>
         <li>賃貸物件の退去時の注意事項</li>
       </ul> 
-    </div>
+  </section>
 
+  <section class="wrap">  
     <div id="apply" class="subtitle">
       <h2>セミナー・相談会の申込について</h2>
     </div>
-    
-
-    <div>
-      <p>※セミナー、相談会ともに事前予約制です。<br>現在、セミナー、相談会の予約受付は行っておりません。<br>次回の予約受付の開始をお待ちください。<br></p>
+  
+    <div class="application-info">
+      <p class="p-no-indent">※セミナー、相談会ともに事前予約制です。<br>現在、セミナー、相談会の予約受付は行っておりません。<br>次回の予約受付の開始をお待ちください。<br></p>
     </div>
         
-    <h2 class="title-with-lines">/  添付ファイル</h2>
+    <h2 class="title-with-lines">/ 添付ファイル</h2>
     <ul>    
       <li><span class="icon-box">PDF</span> <a href="images/setagaya-chirashi.pdf"> 令和7年度住まい・まち学習第2回チラシ (PDF：383KB)</a></li>
     </ul>
       <p>（ 📄 代替ファイル（テキスト：2KB））</p>
-    <h2 id="links" class="title-with-lines">/  関連リンク</h2>
+      <p id="links" class="title-with-lines">/  関連リンク</p>
     <ul>    
       <li>住宅相談</li>
     </ul>
 
+    
+    <section class="wrap">
     <div class="info-box">
       <div class="contact-title">
         <h2>お問い合わせ先</h2>
@@ -181,10 +192,11 @@
         <p class="p-no-indent">都市整備政策部 居住支援課<br>電話番号：<a href="tel:+0000000000">0000000000</a><br>ファクシミリ：00-0000-0000</p>
       </div>
     </div>
-
+    </section>
+  
     <div class="info-box">
       <div class="others-info-title">
-        <h2 class="hover-liner">住まいに関する情報・相談・セミナー</h2>
+        <p class="hover-liner">住まいに関する情報・相談・セミナー</p>
       </div>
       <div class="others-info-links">
         <div>
@@ -199,84 +211,12 @@
         </div>
       </div>
     </div>
-
-    <div class="carousel-container" id="carousel-popup">
-        <div class="carousel-main">
-            <div class="carousel-left">
-                <h2>世田谷区を知る</h2>
-                <p>Learn about Setagaya City</p>
-            </div>
-
-            <div class="carousel-wrapper" id="carousel">
-                <!-- Slide 1 -->
-                <div class="carousel-item">
-                    <div class="carousel-center">
-                        <div class="carousel-image-container">
-                            <img class="carousel-image" src="images/carousel-1.webp" alt="Slide 1">
-                        </div>
-                        <div class="carousel-center-text">
-                      
-                            <a href="#" class="carousel-text-link">詳細はこちら</a>
-                        </div>
-                    </div>
-                    
-                </div>
-
-                <!-- Slide 2 -->
-                <div class="carousel-item">
-                    <div class="carousel-center">
-                        <div class="carousel-image-container">
-                            <img class="carousel-image" src="images/carousel-2.webp" alt="Slide 2">
-                        </div>
-                        <div class="carousel-center-text">
-                            
-                            <a href="#" class="carousel-text-link">詳細はこちら</a>
-                        </div>
-                    </div>
-                    
-                </div>
-
-                <!-- Slide 3 -->
-                <div class="carousel-item">
-                    <div class="carousel-center">
-                        <div class="carousel-image-container">
-                            <img class="carousel-image" src="images/carousel-1.webp" alt="Slide 3">
-                        </div>
-                        <div class="carousel-center-text">
-                            
-                            <a href="#" class="carousel-text-link">詳細はこちら</a>
-                        </div>
-                    </div>
-                   
-                </div>
-
-                <!-- Slide 4 -->
-                <div class="carousel-item">
-                    <div class="carousel-center">
-                        <div class="carousel-image-container">
-                            <img class="carousel-image" src="images/carousel-2.webp" alt="Slide 4">
-                        </div>
-                        <div class="carousel-center-text">
-                            
-                            <a href="#" class="carousel-text-link">詳細はこちら</a>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-
-            <div class="carousel-controls">
-                <div class="carousel-nav">
-                    <button id="prevBtn" onclick="pauseAutoScroll(); scrollCarousel(-1)">←</button>
-                    <button id="nextBtn" onclick="pauseAutoScroll(); scrollCarousel(1)">→</button>
-                </div>
-                <button id="stopBtn" class="carousel-stop playing" onclick="toggleAutoScroll()">⏸ STOP</button>
-                <span class="carousel-counter"><span id="current">1</span> / 6</span>
-            </div>
-        </div>
-    </div>
-
+  </section>
+      </main>
+      <footer> 
+      </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="scripts/main.js"></script>
-    
   </body>
 </html>
