@@ -1,30 +1,40 @@
+@charset "UTF-8";
+
+/*.noto-sans-jp-<uniquifier> {
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}*/    
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html {
     max-width: 1200px;
     margin: 0 auto;
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 18px;
-    line-height: 1.6em;
     padding-bottom: 600px;
-
 }
 
-h1,
-h2,
-h3 {
-    font-weight:600;
-    margin-bottom: 0.6rem;
-    margin-top: 0.8rem;
+body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #222;
+
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 18px;
+    background: #fefefe;
 }
 
-p {
-    text-indent: 30px;
-}
-
-.p-no-indent {
-    padding-left: 30px;
-    text-indent: 0;
-    margin-top: 30px;
-
+.wrap {
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 0 10px;
 }
 
 .page-info {
@@ -35,19 +45,46 @@ p {
     font-size: 14px;
 }
 
-.title {
+p {
+	line-height: 2.5;
+	text-indent: 1em;
+}
+
+.p-no-indent {
+    padding-left: 30px;
+    text-indent: 0;
+}
+
+h1 {
     background-color: #d5e4ff;
     padding: 20px;
     border-left: 8px solid #1a3a7d;
+    font-size: 24px;
+    font-weight: 500;
 }
+
+
+
+h2 {
+    padding: 15px 0 10px;
+}
+
+@media screen and (max-width: 640px){  
+            body {
+                font-size: 16px;
+            }    
+
+            h1 {
+                font-size: 20px;
+            }
+}     
 
 .subtitle {
     background-color: #f0f0f0;
     padding: 5px 20px;
     border-left: 8px solid #1a3a7d;
-    border-bottom: 4px solid #acacac;
+    border-bottom: 4px solid rgb(172, 172, 172);
     margin-top: 60px;
-    margin-bottom: 40px;
 }
 
 .subtitle-small {
@@ -56,8 +93,8 @@ p {
 }
 
 .list-sub {
-    padding-left: 70px;
-    margin: 0;
+    padding-left: 2em;
+    list-style: disc;
 }
 
 .contents-wrapper {
@@ -69,6 +106,7 @@ p {
     position: relative;
     padding: 20px;
     background-color: white;
+    line-height: 2.2;
 }
 
 /* Top-left corner */
@@ -117,7 +155,7 @@ p {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
-    font-size: 16px;
+    font-size: 18px;
     background-color: white;
 }
 
@@ -147,20 +185,30 @@ p {
 
 /* Second column (開催日時) */
 .schedule-table td:nth-child(2) {
-    width: 0.2;
+    width: 0.2em;
 }
 
 /* Third column (セミナーテーマ・講師) */
 .schedule-table td:nth-child(3) {
-    width: 0.5;
+    width: 0.5em;
     line-height: 1.6;
 }
 
 /* Fourth column (会場) */
 .schedule-table td:nth-child(4) {
-    width: 0.3;
+    width: 0.3em;
+}
+.target-capacity strong{
+	font-size: 26px;
 }
 
+.target-capacity p{
+	line-height: 2;
+}
+
+.target{
+	line-height: 2.4;
+}
 .img-box {
     display: flex;
     flex-direction: column;
@@ -196,7 +244,9 @@ p {
     height: 1px;
     background-color: #333;
 }
-
+.application-info{
+	line-height: 2.4;
+}
 .icon-box {
     display: inline-block;
     background-color: #a51515;
@@ -250,214 +300,10 @@ p {
     height: 1px;
     background-color: #acacac;
     transition: width 0.6s ease;
+    width: 0%;
 
 }
 
 .hover-liner:hover::after {
     width: 80%;
 }
-
-.carousel-container {
-    max-width: 1200px;
-    margin-top: 60px;
-    position: fixed;
-    bottom: 0;
-    transition: width 0.6s ease;
-   
-}
-
-.carousel-main {
-    display: flex;
-    gap: 0;
-    border: 1px solid #333;
-    background: white;
-    position: relative;
-}
-
-.carousel-left {
-    background-color: #2a2a2a;
-    color: white;
-    padding: 40px;
-    width: 25%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: left;
-    flex-shrink: 0;
-    position: sticky;
-    left: 0;
-    top: 0;
-    height: fill;
-    z-index: 10;
-}
-
-.carousel-left h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.carousel-left p {
-    font-size: 14px;
-    opacity: 0.8;
-}
-
-.carousel-wrapper {
-    display: flex;
-    overflow-x: scroll;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
-    flex: 1;
-    position: relative;
-}
-
-.carousel-item {
-    min-width: 100%;
-    scroll-snap-align: start;
-    display: flex;
-    gap: 20px;
-    padding: 30px;
-    position: relative;
-}
-
-.carousel-center {
-    flex: 1;
-    background: #dadada;
-    padding: 30px;
-    display: flex;
-    align-items: center;
-    min-width: 300px;
-    height: fill;
-}
-
-.carousel-image-container {
-    flex-shrink: 0;
-    width: 200px;
-    height: 200px;
-    overflow: hidden;
-    border: 2px solid #ccc;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: white;
-}
-
-.carousel-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease, border 0.3s ease;
-    cursor: pointer;
-}
-
-.carousel-image:hover {
-    transform: scale(1.1);
-    border: 3px solid #1976d2;
-}
-
-.carousel-center-text {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.carousel-center h3 {
-    font-size: 18px;
-    color: #d3d2d2;
-    line-height: 1.5;
-}
-
-
-.carousel-text-link {
-    position: relative;
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    display: inline-block;
-    padding-bottom: 4px;
-    font-size: 14px;
-}
-
-.carousel-text-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: #1976d2;
-    transition: width 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-.carousel-text-link:hover::after {
-    width: 100%;
-}
-
-
-
-.carousel-controls {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 10px 15px;
-    border-radius: 8px;
-    z-index: 20;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.carousel-nav {
-    display: flex;
-    gap: 10px;
-}
-
-.carousel-nav button {
-    width: 35px;
-    height: 35px;
-    background-color: #1976d2;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-.carousel-nav button:hover {
-    background-color: #1565c0;
-}
-
-.carousel-nav button:active {
-    transform: scale(0.95);
-}
-
-.carousel-stop {
-    padding: 6px 14px;
-    background-color: #1976d2;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 13px;
-    transition: background-color 0.3s ease;
-    font-weight: bold;
-}
-.carousel-stop:hover {
-    background-color: #1565c0;
-}
-
-.carousel-stop.playing {
-    background-color: #1565c0;
-}
-
-.carousel-counter {
-    font-size: 14px;
-    color: #333;
-    font-weight: bold;
-    white-space: nowrap;
-}
-
-
