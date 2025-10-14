@@ -46,7 +46,6 @@ body {
 }
 
 p {
-	line-height: 2.5;
 	text-indent: 1em;
 }
 
@@ -56,9 +55,6 @@ p {
     margin-top: 40px;
 }
 
-.p-short{
-    line-height: 1.5;
-}
 
 h1 {
     background-color: #d5e4ff;
@@ -235,10 +231,9 @@ h2 {
 }
 
 .eligibility {
-    margin-top: 20px;
-    line-height: 0.2;
+    margin-top: 40px;
+    
 }
-
 .title-with-lines {
     display: flex;
     align-items: center;
@@ -247,7 +242,7 @@ h2 {
 }
 
 .title-with-lines::after {
-    content: none;
+    content: "";
     flex: 1;
     height: 1px;
     background-color: #333;
