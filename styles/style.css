@@ -53,6 +53,11 @@ p {
 .p-no-indent {
     padding-left: 30px;
     text-indent: 0;
+    margin-top: 40px;
+}
+
+.p-short{
+    line-height: 1.5;
 }
 
 h1 {
@@ -62,8 +67,6 @@ h1 {
     font-size: 24px;
     font-weight: 500;
 }
-
-
 
 h2 {
     padding: 15px 0 10px;
@@ -165,7 +168,7 @@ h2 {
 
 .schedule-table th {
     padding: 15px 20px;
-    text-align: left;
+    text-align: center;
     font-weight: bold;
     border: 1px solid #ccc;
 }
@@ -185,18 +188,18 @@ h2 {
 
 /* Second column (開催日時) */
 .schedule-table td:nth-child(2) {
-    width: 0.2em;
+    width: 0.2;
 }
 
 /* Third column (セミナーテーマ・講師) */
 .schedule-table td:nth-child(3) {
-    width: 0.5em;
+    width: 0.5;
     line-height: 1.6;
 }
 
 /* Fourth column (会場) */
 .schedule-table td:nth-child(4) {
-    width: 0.3em;
+    width: 0.3;
 }
 .target-capacity strong{
 	font-size: 26px;
@@ -231,6 +234,11 @@ h2 {
     line-height: 1;
 }
 
+.eligibility {
+    margin-top: 20px;
+    padding-left: 30px;
+    line-height: 0.2;
+}
 .title-with-lines {
     display: flex;
     align-items: center;
@@ -278,7 +286,7 @@ h2 {
 }
 
 .others-info-title {
-    padding: 10px 10px 10px 30px;
+    padding: 10px 0px;
     border-bottom: solid 1px #acacac;
 }
 
@@ -307,3 +315,4 @@ h2 {
 .hover-liner:hover::after {
     width: 80%;
 }
+
