@@ -18,12 +18,14 @@ html {
     padding-bottom: 600px;
 }
 
+.header-wrapper {
+    border-bottom: 1px solid #ddd;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #ddd;
-
 }
 
 .logo {
