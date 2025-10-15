@@ -5,27 +5,234 @@
   font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal;
-}*/    
-
+}*/
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html {
-    max-width: 1200px;
     margin: 0 auto;
     padding-bottom: 600px;
 }
 
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+}
+
+.logo-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+.logo-text h3 {
+    font-size: 20px;
+    margin: 0;
+    min-width: 80px;
+
+}
+
+.logo-text h4 {
+    font-size: 11px;
+    color: #666;
+    margin: 0;
+    align-items: start;
+}
+
+/* Navigation menu */
+.nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: flex-end;
+
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.nav-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+    font-size: 14px;
+    max-height: 20px;
+    padding: 0 10px;
+    text-indent: 0;
+    margin: 0;
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #acacac;
+    transition: width 0.6s ease;
+    width: 0;
+}
+
+.nav-item:hover::after {
+    width: 100%;
+}
+
+.nav-item-collapse {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    max-height: 20px;
+    padding: 0 10px;
+    margin: 0;
+}
+
+.mobile-collapse {
+    font-size: 12px;
+    line-height: 1;
+    align-items: left;
+    text-align: start;
+    text-indent: 0;
+}
+
+@media screen and (max-width: 1015px) {
+    .nav-item-collapse {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .header {
+
+        align-items: center;
+
+    }
+    .nav {
+        align-items: center;
+        flex-wrap: none;
+        justify-content: center;
+        gap: 4px;
+
+    }
+    .nav-item {
+        border: #333 1px solid;
+        gap: 0;
+        display: block;
+        flex-wrap: none;
+        align-items: end;
+        text-align: center;
+        max-height: none;
+        width: 80px;
+        height: 80px;
+        padding-top: 10px;
+
+    }
+
+    .mobile-nav {
+        display: block;
+        font-size: 12px;
+        line-height: 1;
+        justify-content: center;
+        padding-top: 5px;
+    }
+}
+
+.p-menu {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    line-height: 1.2;
+    text-indent: 0;
+}
+
+/* Emergency button */
+.emergency-btn {
+    background-color: #beecfe;
+    color: white;
+    padding: 0 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    align-items: center;
+    width: 80px;
+    gap: 20px;
+}
+
+.emergency-btn:hover {
+    background-color: #002060;
+}
+
+.p-menu-src {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    line-height: 1.2;
+    text-indent: 0;
+}
+
+/* Search button */
+.search-btn {
+    background-color: #003087;
+    color: white;
+
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    width: 80px;
+}
+
+.search-btn:hover {
+    background-color: #fefefe;
+}
+
+.search-btn:hover .p-menu-src:hover {
+    color: #003087;
+}
+
+.search-btn:hover svg path {
+    stroke: #003087;
+
+}
+
+/* Icon placeholders */
+.img-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+}
 body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
     color: #222;
-
     font-family: "Noto Sans JP", sans-serif;
     font-size: 18px;
     background: #fefefe;
@@ -46,7 +253,7 @@ body {
 }
 
 p {
-	text-indent: 1em;
+    text-indent: 1em;
 }
 
 .p-no-indent {
@@ -54,7 +261,6 @@ p {
     text-indent: 0;
     margin-top: 40px;
 }
-
 
 h1 {
     background-color: #d5e4ff;
@@ -68,15 +274,15 @@ h2 {
     padding: 15px 0 10px;
 }
 
-@media screen and (max-width: 640px){  
-            body {
-                font-size: 16px;
-            }    
+@media screen and (max-width: 640px) {
+    body {
+        font-size: 16px;
+    }
 
-            h1 {
-                font-size: 20px;
-            }
-}     
+    h1 {
+        font-size: 20px;
+    }
+}
 
 .subtitle {
     background-color: #f0f0f0;
@@ -136,7 +342,6 @@ h2 {
 .title-wrapper {
     position: relative;
     margin: 40px 0;
-
 }
 
 .title-wrapper::after {
@@ -184,30 +389,32 @@ h2 {
 
 /* Second column (開催日時) */
 .schedule-table td:nth-child(2) {
-    width: 0.2;
+    width: 20%;
 }
 
 /* Third column (セミナーテーマ・講師) */
 .schedule-table td:nth-child(3) {
-    width: 0.5;
+    width: 50%;
     line-height: 1.6;
 }
 
 /* Fourth column (会場) */
 .schedule-table td:nth-child(4) {
-    width: 0.3;
-}
-.target-capacity strong{
-	font-size: 26px;
+    width: 30%;
 }
 
-.target-capacity p{
-	line-height: 2;
+.target-capacity strong {
+    font-size: 26px;
 }
 
-.target{
-	line-height: 2.4;
+.target-capacity p {
+    line-height: 2;
 }
+
+.target {
+    line-height: 2.4;
+}
+
 .img-box {
     display: flex;
     flex-direction: column;
@@ -232,8 +439,8 @@ h2 {
 
 .eligibility {
     margin-top: 40px;
-    
 }
+
 .title-with-lines {
     display: flex;
     align-items: center;
@@ -247,9 +454,11 @@ h2 {
     height: 1px;
     background-color: #333;
 }
-.application-info{
-	line-height: 2.4;
+
+.application-info {
+    line-height: 2.4;
 }
+
 .icon-box {
     display: inline-block;
     background-color: #a51515;
@@ -276,13 +485,15 @@ h2 {
 .others-info-links {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     margin: 20px 0;
-
 }
 
 .others-info-title {
-    padding: 10px 0px;
+    padding: 10px 0;
     border-bottom: solid 1px #acacac;
+    flex: 1 1 50%;
+    min-width: 250px;
 }
 
 .hover-liner {
@@ -292,6 +503,7 @@ h2 {
     font-weight: 500;
     padding-bottom: 4px;
     margin: 10px;
+    text-indent: 30px;
 }
 
 .hover-liner::after {
@@ -303,8 +515,7 @@ h2 {
     height: 1px;
     background-color: #acacac;
     transition: width 0.6s ease;
-    width: 0%;
-
+    width: 0;
 }
 
 .hover-liner:hover::after {
