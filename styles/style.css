@@ -151,7 +151,7 @@ body {
 	content: '';
 	position: absolute;
 	top: 24px;
-	bottom: 0px;
+	bottom: 0;
 	left: 0;
 	width: 0;
 	height: 1px;
@@ -160,8 +160,7 @@ body {
 	width: 0;
 }
 
-.nav-item-collapse:hover::after
-{
+.nav-item-collapse:hover::after {
 	width: 100%;
 }
 
@@ -175,7 +174,7 @@ body {
 
 @media screen and (max-width: 1015px) {
 	.nav-item-collapse {
-			display: none;
+		display: none;
 	}
 }
 
@@ -293,7 +292,7 @@ body {
 		width: 20px;
 		height: 20px;
 	}
-} 
+}
 
 /* Icon placeholders */
 .img-icon {
@@ -334,11 +333,11 @@ h2 {
 
 @media screen and (max-width: 640px) {
 	body {
-			font-size: 16px;
+		font-size: 16px;
 	}
 
 	h1 {
-			font-size: 20px;
+		font-size: 20px;
 	}
 }
 
