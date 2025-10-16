@@ -1,347 +1,583 @@
-<!doctype html>
-<html lang="ja">
-<head>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width"/>
-        <title>テストページ</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link
-            rel="preconnect"
-            href="https://fonts.gstatic.com"
-            crossorigin="crossorigin">
-        <link
-            href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap"
-            rel="stylesheet">
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-        <link href="styles/style.css" rel="stylesheet"/>
-    </head>
+@charset "UTF-8";
 
-    <body>
-        <header class="header-wrapper">
-            <section class="wrap">
-                <div class="header">
-                    <div class="logo">
-                        <img class="logo-icon" img="img" src="images/logo.svg">
-                        <div class="logo-text">
-                            <h3>世田谷区</h3>
-                            <h4>SETAGAYA CITY</h4>
-                        </div>
-                    </div>
-                    <div class="nav-right">
-                        <nav class="nav">
-                            <p class="nav-item"><img class="img-icon" img="img" src="images/settings.svg">
-                                <span class="mobile-nav">閲覧支援</span>
-                            </a>
-                            <p class="nav-item"><img class="img-icon" img="img" src="images/global.svg">
-                                <span class="mobile-nav">Foreign Language</span>
-                            </a>
-                            <p class="nav-item-collapse"><img class="img-icon" img="img" src="images/location.svg">
-                                <span class="mobile-collapse">アクセス・施設案内</span>
-                            </a>
-                            <p class="nav-item-collapse"><img class="img-icon" img="img" src="images/counter.svg">
-                                <span class="mobile-collapse">窓口混雑状況</span>
-                            </a>
-                        </nav>
+/*.noto-sans-jp-<uniquifier> {
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}*/
 
-                        <div style="display: flex;">
-                            <button class="emergency-btn">
-                                <svg
-                                    width="30px"
-                                    height="30px"
-                                    viewbox="0 0 24 24"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 10V13" stroke="#fefefe" stroke-width="2" stroke-linecap="round"/>
-                                    <path
-                                        d="M12 16V15.9888"
-                                        stroke="#fefefe"
-                                        stroke-width="2"
-                                        stroke-linecap="round"/>
-                                    <path
-                                        d="M10.2518 5.147L3.6508 17.0287C2.91021 18.3618 3.87415 20 5.39912 20H18.6011C20.126 20 21.09 18.3618 20.3494 17.0287L13.7484 5.147C12.9864 3.77538 11.0138 3.77538 10.2518 5.147Z"
-                                        stroke="#fefefe"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"/>
-                                </svg>
-                                <p class="p-menu">緊急情報</p>
-                            </button>
-                            <button class="search-btn">
-                                <svg
-                                    width="30px"
-                                    height="30px"
-                                    viewbox="0 0 24 24"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M14 5H20"
-                                        stroke="#fefefe"
-                                        stroke-width="1.5"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"/>
-                                    <path
-                                        d="M14 8H17"
-                                        stroke="#fefefe"
-                                        stroke-width="1.5"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"/>
-                                    <path
-                                        d="M21 11.5C21 16.75 16.75 21 11.5 21C6.25 21 2 16.75 2 11.5C2 6.25 6.25 2 11.5 2"
-                                        stroke="#fefefe"
-                                        stroke-width="1.5"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"/>
-                                    <path
-                                        d="M22 22L20 20"
-                                        stroke="#fefefe"
-                                        stroke-width="1.5"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"/>
-                                </svg>
-                                <p class="p-menu">検索<br>メニュー</p>
-                            </button>
-                        </div>
-                    </div>
-                </section>
-            </header>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-            <main>
-                <section class="wrap">
-                    <div class="page-info">
-                        <span>最終更新日 2025年10月3日</span>
-                        <span>ページID 3740</span>
-                    </div>
+html {
+    margin: 0 auto;
+    padding-bottom: 600px;
+}
 
-                    <div class="title">
-                        <h1>令和7年度「住まい・まち学習」セミナー・相談会</h1>
-                    </div>
-                    <div class="contents-wrapper">
-                        <div class="contents">
-                            <h3>目次</h3>
-                            <ul>
-                                <li>
-                                    <a href="#seminar">セミナー</a>
-                                    <ul class="list-sub">
-                                        <li>
-                                            <a href="#reiwa-2025">令和7年度開催内容</a>
-                                        </li>
-                                        <li>
-                                            <a href="#reiwa-2024">令和6年度開催内容</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#consultation">不動産無料相談会</a>
-                                    <ul class="list-sub">
-                                        <li>
-                                            <a href="#audience">対象者・定員</a>
-                                        </li>
-                                        <li>
-                                            <a href="#cases">主な相談事例</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#apply">セミナー・相談会の申込について</a>
-                                </li>
-                                <li>
-                                    <a href="#attachment">添付ファイル</a>
-                                </li>
-                                <li>
-                                    <a href="#links">関連リンク</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
+.header-wrapper {
+    border-bottom: 1px solid #ddd;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 1000;
+  
+}
 
-                <section class="wrap">
-                    <div id="seminar" class="subtitle">
-                        <h2>セミナー</h2>
-                    </div>
-                    <p class="mt-4">区民主体の住まい・まちづくりをめざして、「自分たちの住環境を知り・考え・創っていく」をテーマにした講座を行っています。</p>
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
 
-                    <div class="title-wrapper">
-                        <div class="subtitle-small">
-                            <h3>令和7年度開催内容</h3>
-                        </div>
-                    </div>
+}
 
-                    <table id="reiwa-2025" class="schedule-table">
-                        <thead>
-                            <tr>
-                                <th>回</th>
-                                <th>開催日時</th>
-                                <th>セミナーテーマ<br>講師</th>
-                                <th>会場</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <strong>1</strong>
-                                </td>
-                                <td>7月4日（金曜日）</td>
-                                <td>
-                                    セミナーテーマ<br>
-                                    「遺言の書き方ポイントと本当にあったトラブル事例」
-                                </td>
-                                <td>ホール オリオン</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <strong>2</strong>
-                                </td>
-                                <td>10月2日（木曜日）</td>
-                                <td>
-                                    セミナーテーマ<br>
-                                    「相続対策のすすめ」<br>
-                                    講師<br>
-                                    （税理士）
-                                </td>
-                                <td>民会館「イーグレットホール」集会室</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <strong>3</strong>
-                                </td>
-                                <td>11月15日（土曜日）<br>午前開催予定</td>
-                                <td>未定</td>
-                                <td>民会館「ホール」集会室</td>
-                            </tr>
-                        </tbody>
-                    </table>
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
 
-                    <div class="target-capacity">
-                        <p class="m-0">
-                            <strong>対象者・定員</strong>
-                        </p>
-                        <p class="p-no-indent">対象者：在勤・在学の方<br>第2回セミナーの定員：90名（事前予約制先着順）</p>
-                    </div>
+}
 
-                    <div id="reiwa-2024" class="title-wrapper">
-                        <div class="subtitle-small">
-                            <h3>令和6年度開催内容</h3>
-                        </div>
-                    </div>
+.logo-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
 
-                    <div>
-                        <p>令和6年度は下記のテーマでセミナーを開催しました。</p>
-                        <ul>
-                            <li>第1回「相続2024年問題を考える」</li>
-                            <li>第2回「『実例に学ぶ!』弁護士と税理士の両方の観点から見た相続対策」</li>
-                            <li>第3回「『貸地・借地のトラブル解決法』更新・地代・建て替え・借地譲渡のトラブル解決法」</li>
-                        </ul>
-                    </div>
+.logo-text h3 {
+    font-size: 20px;
+    margin: 0;
+    min-width: 80px;
 
-                    <div class="img-box">
-                        <img
-                            src="images/setagaya-2024.webp"
-                            alt="scene from the seminar"
-                            class="img-seminar">
-                        <div>
-                            <p class="img-text">セミナーの様子</p>
-                        </div>
-                    </div>
+}
 
-                    <div id="consultation" class="subtitle">
-                        <h2>不動産無料相談会</h2>
-                    </div>
+.logo-text h4 {
+    font-size: 11px;
+    color: #666;
+    margin: 0;
+    align-items: start;
+}
 
-                    <div>
-                        <p class="mt-4">上記セミナーと同日、同会場にて、弁護士、税理士の専門家が30分間の個別相談に応じます。</p>
-                    </div>
+/* Navigation menu */
+.nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: flex-end;
 
-                    <div id="audience" class="title-wrapper mb-3">
-                        <div class="subtitle-small">
-                            <h3>対象者・定員</h3>
-                        </div>
-                    </div>
+}
 
-                    <div class="eligibility">
-                        <p>対象者：在住・在勤・在学の方</p>
-                        <p>第2回相談会の定員：40組</p>
-                        <p>各専門家（宅地建物取引士（2名）、弁護士（3名）、税理士（3名））が下記相談枠で個別相談に応じます。（事前予約制先着順）</p>
-                        <p>相談枠 (1)13時30分から14時00分まで(2)14時10分から14時40分まで</p>
-                        <p>(3)14時50分から15時20分まで(4)15時30分から16時00分まで</p>
-                        <p>(5)16時10分から16時40分まで</p>
-                    </div>
+.nav-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
 
-                    <div id="cases" class="title-wrapper">
-                        <div class="subtitle-small">
-                            <h3>主な相談事例</h3>
-                        </div>
-                    </div>
-                    <ul>
-                        <li>土地や建物の売買の際にかかる税金について</li>
-                        <li>賃貸物件の退去時の注意事項</li>
-                    </ul>
-                </section>
+.nav-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+    font-size: 14px;
+    max-height: 20px;
+    padding: 0 10px;
+    text-indent: 0;
+    margin: 0;
+}
 
-                <section class="wrap">
-                    <div id="apply" class="subtitle">
-                        <h2>セミナー・相談会の申込について</h2>
-                    </div>
+.nav-item::after {
+    content: '';
+    position: absolute;
+    top: 24px;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #acacac;
+    transition: width 0.6s ease;
+    width: 0;
+}
 
-                    <div class="application-info">
-                        <p class="p-no-indent">※セミナー、相談会ともに事前予約制です。<br>現在、セミナー、相談会の予約受付は行っておりません。<br>次回の予約受付の開始をお待ちください。<br></p>
-                    </div>
+.nav-item:hover::after {
+    width: 100%;
+}
 
-                    <h3 id="attachment" class="title-with-lines">/ 添付ファイル</h3>
-                    <ul>
-                        <li>
-                            <span class="icon-box">PDF</span>
-                            <a href="images/setagaya-chirashi.pdf">
-                                令和7年度住まい・まち学習第2回チラシ (PDF：383KB)</a>
-                        </li>
-                    </ul>
-                    <p>（ 📄 代替ファイル（テキスト：2KB））</p>
-                    <h3 id="links" class="title-with-lines">/ 関連リンク</h3>
-                    <ul>
-                        <li>住宅相談</li>
-                    </ul>
+.nav-item-collapse {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    max-height: 20px;
+    padding: 0 10px;
+    margin: 0;
+}
 
-                    <section class="wrap">
-                        <div class="info-box">
-                            <div class="contact-title">
-                                <h2>お問い合わせ先</h2>
-                            </div>
-                            <div>
-                                <p class="p-no-indent">都市整備政策部 居住支援課<br>電話番号：<a href="tel:+0000000000">0000000000</a><br>ファクシミリ：00-0000-0000</p>
-                            </div>
-                        </div>
-                    </section>
+.nav-item-collapse::after {
+    content: '';
+    position: absolute;
+    top: 24px;
+    bottom: 0px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #acacac;
+    transition: width 0.6s ease;
+    width: 0;
+}
 
-                    <section class="wrap">
-                        <div class="info-box">
-                            <div class="others-info-title">
-                                <p class="hover-liner">住まいに関する情報・相談・セミナー</p>
-                            </div>
-                            <div class="others-info-links">
-                                <div>
-                                    <p class="hover-liner">→ Information about family</p>
-                                    <p class="hover-liner">→ Vacant Houses
-                                    </p>
-                                    <p class="hover-liner">→ FY2025 "Living and Town Learning"
-                                    </p>
-                                </div>
-                                <div>
-                                    <p class="hover-liner">→ Housing Consultation</p>
-                                    <p class="hover-liner">→ Other housing-related consultation services</p>
-                                    <p class="hover-liner">→ Information on housing</p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+.nav-item-collapse:hover::after
+{
+    width: 100%;
+}
 
-                </section>
-            </main>
-            <footer></footer>
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-            <script
-                src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-            <script src="scripts/main.js"></script>
-        </body>
-    </html>
+.mobile-collapse {
+    font-size: 12px;
+    line-height: 1;
+    align-items: left;
+    text-align: start;
+    text-indent: 0;
+}
+
+@media screen and (max-width: 1015px) {
+    .nav-item-collapse {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .header {
+
+        align-items: center;
+
+    }
+    .nav {
+        align-items: center;
+        flex-wrap: none;
+        justify-content: center;
+        gap: 4px;
+
+    }
+    .nav-item {
+        border: #333 1px solid;
+        gap: 0;
+        display: block;
+        flex-wrap: none;
+        align-items: end;
+        text-align: center;
+        max-height: none;
+        width: 80px;
+        height: 80px;
+        padding-top: 10px;
+
+    }
+
+    .mobile-nav {
+        display: block;
+        font-size: 12px;
+        line-height: 1;
+        justify-content: center;
+        padding-top: 5px;
+    }
+}
+
+
+.p-menu {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    line-height: 1.2;
+    text-indent: 0;
+}
+
+/* Emergency button */
+.emergency-btn {
+    background-color: #beecfe;
+    color: white;
+    padding: 0 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    align-items: center;
+    width: 80px;
+    gap: 20px;
+}
+
+.emergency-btn:hover {
+    background-color: #002060;
+}
+
+.p-menu-src {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    line-height: 1.2;
+    text-indent: 0;
+}
+
+/* Search button */
+.search-btn {
+    background-color: #003087;
+    color: white;
+
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    width: 80px;
+}
+
+.search-btn:hover {
+    background-color: #fefefe;
+}
+
+.search-btn:hover .p-menu-src:hover {
+    color: #003087;
+}
+
+.search-btn:hover svg path {
+    stroke: #003087;
+
+}
+
+@media screen and (max-width: 500px) {
+    .emergency-btn {
+        width: 60px;
+        height: 60px;
+        gap: 10px;
+    }
+
+   .search-btn {
+        display: none;
+        width: 50px;
+        height: 50px;
+        gap: 10px;
+    }
+    p {
+        font-size: 14px;
+    }
+
+    .emergency-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+} 
+
+/* Icon placeholders */
+.img-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+}
+body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #222;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 18px;
+    background: #fefefe;
+}
+
+.wrap {
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+body {
+    margin-top: 80px;
+}
+.page-info {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+p {
+    text-indent: 1em;
+}
+
+.p-no-indent {
+    padding-left: 30px;
+    text-indent: 0;
+    margin-top: 40px;
+}
+
+h1 {
+    background-color: #d5e4ff;
+    padding: 20px;
+    border-left: 8px solid #1a3a7d;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+h2 {
+    padding: 15px 0 10px;
+}
+
+@media screen and (max-width: 640px) {
+    body {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+}
+
+.subtitle {
+    background-color: #f0f0f0;
+    padding: 5px 20px;
+    border-left: 8px solid #1a3a7d;
+    border-bottom: 4px solid rgb(172, 172, 172);
+    margin-top: 60px;
+}
+
+.subtitle-small {
+    padding: 5px 0;
+    border-bottom: 2px solid rgb(172, 172, 172);
+}
+
+.list-sub {
+    padding-left: 2em;
+    list-style: disc;
+}
+
+.contents-wrapper {
+    position: relative;
+    margin: 40px 0;
+}
+
+.contents {
+    position: relative;
+    padding: 20px;
+    background-color: white;
+    line-height: 2.2;
+}
+
+/* Top-left corner */
+.contents::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500px;
+    height: 80px;
+    border-top: 1px solid #333;
+    border-left: 1px solid #333;
+}
+
+/* Bottom-right corner */
+.contents-wrapper::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 500px;
+    height: 80px;
+    border-bottom: 1px solid #333;
+    border-right: 1px solid #333;
+    z-index: 1;
+}
+
+.title-wrapper {
+    position: relative;
+    margin: 40px 0;
+}
+
+.title-wrapper::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 180px;
+    height: 80px;
+    border-bottom: 2px solid #1a3a7d;
+    z-index: 1;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    background-color: white;
+}
+
+.schedule-table thead {
+    background-color: #d9d9d9;
+}
+
+.schedule-table th {
+    padding: 15px 20px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #ccc;
+}
+
+.schedule-table td {
+    padding: 20px;
+    border: 1px solid #ccc;
+    vertical-align: center;
+}
+
+/* First column (回) */
+.schedule-table td:first-child {
+    text-align: center;
+    font-weight: bold;
+    width: 60px;
+}
+
+/* Second column (開催日時) */
+.schedule-table td:nth-child(2) {
+    width: 20%;
+}
+
+/* Third column (セミナーテーマ・講師) */
+.schedule-table td:nth-child(3) {
+    width: 50%;
+    line-height: 1.6;
+}
+
+/* Fourth column (会場) */
+.schedule-table td:nth-child(4) {
+    width: 30%;
+}
+
+.target-capacity strong {
+    font-size: 26px;
+}
+
+.target-capacity p {
+    line-height: 2;
+}
+
+.target {
+    line-height: 2.4;
+}
+
+.img-box {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+    padding-left: 30px;
+    width: 200px;
+    height: 200px;
+}
+
+.img-seminar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.img-text {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+.eligibility {
+    margin-top: 40px;
+}
+
+.title-with-lines {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 60px;
+}
+
+.title-with-lines::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: #333;
+}
+
+.application-info {
+    line-height: 2.4;
+}
+
+.icon-box {
+    display: inline-block;
+    background-color: #a51515;
+    color: white;
+    padding: 2px 8px;
+    font-size: 12px;
+    font-weight: bold;
+    width: 80px;
+    margin: auto;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.info-box {
+    border: 1px solid #c4c4c4;
+    margin-top: 40px;
+}
+
+.contact-title {
+    background-color: #f0f0f0;
+    padding: 10px 10px 10px 30px;
+}
+
+.others-info-links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.others-info-title {
+    padding: 10px 0;
+    border-bottom: solid 1px #acacac;
+    flex: 1 1 50%;
+    min-width: 250px;
+}
+
+.hover-liner {
+    position: relative;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding-bottom: 4px;
+    margin: 10px;
+    text-indent: 30px;
+}
+
+.hover-liner::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #acacac;
+    transition: width 0.6s ease;
+    width: 0;
+}
+
+.hover-liner:hover::after {
+    width: 80%;
+}
