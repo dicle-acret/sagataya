@@ -633,6 +633,7 @@ h2 {
 .icon-box {
   display: inline-block;
   color: white;
+  background-color: rgb(222, 0, 0);
   padding: 2px 8px;
   font-size: 12px;
   font-weight: bold;
