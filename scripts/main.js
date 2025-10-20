@@ -1,73 +1,80 @@
-        const carousel = document.getElementById('carousel');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const stopBtn = document.getElementById('stopBtn');
-        const currentSpan = document.getElementById('current');
-        
-        let autoScrollInterval = null;
-        let isPlaying = true;
-        let currentSlide = 0;
-        const totalSlides = 6;
-        const slideWidth = window.innerWidth > 768 ? window.innerWidth - 340 : window.innerWidth;
+// Sticky header
+const header = document.querySelector('.header-wrapper-sticky');
+const toggleClass = 'is-sticky';
 
-        function updateCounter() {
-            currentSpan.textContent = currentSlide + 1;
-        }
-
-        function scrollCarousel(direction) {
-            currentSlide += direction;
-            if (currentSlide >= totalSlides) currentSlide = 0;
-            if (currentSlide < 0) currentSlide = totalSlides - 1;
-            
-            carousel.scrollBy({
-                left: direction * slideWidth,
-                behavior: 'smooth'
-            });
-            updateCounter();
-        }
-
-        function autoScroll() {
-            scrollCarousel(1);
-        }
-
-        function startAutoScroll() {
-            if (autoScrollInterval) clearInterval(autoScrollInterval);
-            autoScrollInterval = setInterval(autoScroll, 4000);
-            isPlaying = true;
-            stopBtn.classList.add('playing');
-            stopBtn.textContent = '⏸ STOP';
-        }
-
-        function pauseAutoScroll() {
-            if (autoScrollInterval) {
-                clearInterval(autoScrollInterval);
-                autoScrollInterval = null;
-            }
-        }
-
-        function toggleAutoScroll() {
-            if (isPlaying) {
-                pauseAutoScroll();
-                isPlaying = false;
-                stopBtn.classList.remove('playing');
-                stopBtn.textContent = '▶ PLAY';
-            } else {
-                startAutoScroll();
-            }
-        }
-
-        // Start auto-scroll on page load
-        startAutoScroll();
-
-        window.addEventListener("scroll", () => {
-  const popup = document.querySelector(".carousel-container");
-  const box = document.getElementById("carousel-popup");
-  const boxTop = box.getBoundingClientRect().top;
-
-  // Hide the popup when #carousel-popup section enters the viewport
-  if (boxTop <= window.innerHeight) {
-    popup.classList.add("hidden");
+window.addEventListener("scroll", () => {
+  const currentScroll = window.pageYOffset;
+  if (currentScroll > 150) {
+    header.classList.add(toggleClass);
   } else {
-    popup.classList.remove("hidden");
+    header.classList.remove(toggleClass);
   }
+});
+
+// Back to top button
+const homeButton = document.querySelector('.home-button');
+const footer = document.querySelector('footer');
+
+window.addEventListener("scroll", () => {
+  const currentScroll = window.pageYOffset;
+  const windowHeight = window.innerHeight;
+  const documentHeight = document.documentElement.scrollHeight;
+  
+  // Show button after scrolling 300px
+  if (currentScroll > 300) {
+    homeButton.classList.add('is-visible');
+  } else {
+    homeButton.classList.remove('is-visible');
+  }
+  
+  // Position button above footer when near bottom
+  if (currentScroll + windowHeight >= documentHeight - footer.offsetHeight - 20) {
+    homeButton.classList.add('at-footer');
+  } else {
+    homeButton.classList.remove('at-footer');
+  }
+});
+
+// Magnific Popup
+$(document).ready(function() {
+  $('.image-popup').magnificPopup({
+    type: 'image',
+    closeOnContentClick: true,
+    mainClass: 'mfp-img-mobile',
+    image: {
+      verticalFit: true,
+      titleSrc: function(item) {
+        return item.el.find('img').attr('alt');
+      }
+    }
+  });
+
+  // Slick Carousel with responsive settings
+  $('.autoplay').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    arrows: true,
+    dots: false,
+    infinite: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+          dots: true
+        }
+      }
+    ]
+  });
 });
