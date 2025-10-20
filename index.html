@@ -1,17 +1,23 @@
 <!doctype html>
 <html lang="ja">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width"/>
-<title>テストページ</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap"rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-<link href="styles/style.css" rel="stylesheet"/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>テストページ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link href="styles/style.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
 </head>
 
 <body>
-<header class="header-wrapper">
+
+<header id="top" class="header-wrapper">
 <section class="section-wrap-header">
 <div class="header">
     <div class="logo">
@@ -24,16 +30,16 @@
     <div class="nav-right">
         <nav class="nav">
             <p class="nav-item"><img class="img-icon" img="img" src="images/settings.svg">
-                <span class="mobile-nav">閲覧支援</span>
+                <span class="tablet-nav">閲覧支援</span>
             </p>
             <p class="nav-item"><img class="img-icon" img="img" src="images/global.svg">
-                <span class="mobile-nav">Foreign Language</span>
-            </p>
+                <span class="tablet-nav">Foreign Language</span>
+            </a>
             <p class="nav-item-collapse"><img class="img-icon" img="img" src="images/location.svg">
-                <span class="mobile-collapse">アクセス・施設案内</span>
+                <span class="tablet-collapse">アクセス・施設案内</span>
             </p>
             <p class="nav-item-collapse"><img class="img-icon" img="img" src="images/counter.svg">
-                <span class="mobile-collapse">窓口混雑状況</span>
+                <span class="tablet-collapse">窓口混雑状況</span>
             </p>
         </nav>
 
@@ -98,6 +104,60 @@
         </div>
     </div>
 </section>
+</header>    
+<header class="header-wrapper-sticky">
+    <section class="section-wrap-header">
+      <div class="header">
+        <div class="logo">
+        <img class="logo-icon" img="img" src="images/logo.svg">
+        <div class="logo-text">
+            <h3>田田田田</h3>
+            <h4>SATEGAYA CITY</h4>
+        </div>
+      </div>
+      <div class="nav-right">
+        <nav class="nav">
+            <p class="text-nav-sticky">このページに知りたい情報がない場合は</p>
+        </nav>
+
+        <div>
+            <button class="search-btn-sticky">
+                <svg
+                    width="20px"
+                    height="30px"
+                    viewbox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M14 5H20"
+                        stroke="#fefefe"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"/>
+                    <path
+                        d="M14 8H17"
+                        stroke="#fefefe"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"/>
+                    <path
+                        d="M21 11.5C21 16.75 16.75 21 11.5 21C6.25 21 2 16.75 2 11.5C2 6.25 6.25 2 11.5 2"
+                        stroke="#fefefe"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"/>
+                    <path
+                        d="M22 22L20 20"
+                        stroke="#fefefe"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"/>
+                </svg>
+                <p>検索メニュー</p>
+            </button>
+        </div>
+      </div>
+    </section>
 </header>
 
 <main>
@@ -211,7 +271,7 @@
         <p class="m-0">
             <strong>対象者・定員</strong>
         </p>
-        <p class="p-no-indent">対象者：在勤・在学の方<br>第2回セミナーの定員：90名（事前予約制先着順）</p>
+        <p class="p-no-indent">対象者:在勤・在学の方<br>第2回セミナーの定員:90名(事前予約制先着順)</p>
     </div>
 
     <div id="reiwa-2024" class="title-wrapper">
@@ -230,14 +290,16 @@
     </div>
 
     <div class="img-box">
+    <a href="images/setagaya-2024.webp" class="image-popup">
         <img
             src="images/setagaya-2024.webp"
             alt="scene from the seminar"
             class="img-seminar">
-        <div>
-            <p class="img-text">セミナーの様子</p>
-        </div>
+    </a>
+    <div>
+        <p class="img-text">セミナーの様子</p>
     </div>
+</div>
 
     <div id="consultation" class="subtitle">
         <h2>不動産無料相談会</h2>
@@ -254,9 +316,9 @@
     </div>
 
     <div class="eligibility">
-        <p>対象者：在住・在勤・在学の方</p>
-        <p>第2回相談会の定員：40組</p>
-        <p>各専門家（宅地建物取引士（2名）、弁護士（3名）、税理士（3名））が下記相談枠で個別相談に応じます。（事前予約制先着順）</p>
+        <p>対象者:在住・在勤・在学の方</p>
+        <p>第2回相談会の定員:40組</p>
+        <p>各専門家(宅地建物取引士(2名)、弁護士(3名)、税理士(3名))が下記相談枠で個別相談に応じます。(事前予約制先着順)</p>
         <p>相談枠 (1)13時30分から14時00分まで(2)14時10分から14時40分まで</p>
         <p>(3)14時50分から15時20分まで(4)15時30分から16時00分まで</p>
         <p>(5)16時10分から16時40分まで</p>
@@ -287,10 +349,10 @@
         <li>
             <span class="icon-box">PDF</span>
             <a href="images/setagaya-chirashi.pdf">
-                令和7年度住まい・まち学習第2回チラシ (PDF：383KB)</a>
+                令和7年度住まい・まち学習第2回チラシ (PDF:383KB)</a>
         </li>
     </ul>
-    <p>（ 📄 代替ファイル（テキスト：2KB））</p>
+    <p>(📄 代替ファイル(テキスト:2KB))</p>
     <h3 id="links" class="title-with-lines">/ 関連リンク</h3>
     <ul>
         <li>住宅相談</li>
@@ -301,7 +363,7 @@
             <h2>お問い合わせ先</h2>
         </div>
         <div>
-            <p class="p-no-indent">都市整備政策部 居住支援課<br>電話番号：<a href="tel:+0000000000">0000000000</a><br>ファクシミリ：00-0000-0000</p>
+            <p class="p-no-indent">都市整備政策部 居住支援課<br>電話番号:<a href="tel:+0000000000">0000000000</a><br>ファクシミリ:00-0000-0000</p>
         </div>
     </div>
 
@@ -337,9 +399,44 @@
             </div>
         </div>
     </div>
+    <div class="popup-carousel">
+        <div class="popup-carousel-title">
+        <h2>世田谷区を知る</h2>
+        <p>Learn about Setagaya City</p>
+        </div>
+        
+        <div class="autoplay">
+          <div class="carousel-item">
+                <div class="carousel-image"><img src="images/Slide.jpg" alt="Slide 1"></div>
+                <p class="hover-liner">Placeholder for Carousel</p>
+            </div>
 
+          <div class="autoplay">
+            <div class="carousel-item">
+                <div class="carousel-image"><img src="images/Slide 2.jpg" alt="Slide 1"></div>
+                <p class="hover-liner">Placeholder for Carousel</p>
+            </div>
+
+          <div class="autoplay">
+            <div class="carousel-item">
+                <div class="carousel-image"><img src="images/Slide 3.jpg" alt="Slide 1"></div>
+                <p class="hover-liner">Placeholder for Carousel</p>
+            </div>
+
+          <div class="autoplay">
+            <div class="carousel-item">
+                <div class="carousel-image"><img src="images/Slide 4.jpg" alt="Slide 1"></div>
+                <p class="hover-liner">Placeholder for Carousel</p>
+            </div>
+        </div>
+
+</div> 
 </section>
 </main>
+ <a href="#top" class="home-button"><svg xmlns="http://www.w3.org/2000/svg" width="62" height="62" fill="#fefefe" stroke= "#002060" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z"/></svg>
+ </a>  
+
 <footer>
 <section class="wrap">
     <div class="footer-links">
@@ -369,19 +466,36 @@
                 </div>
                 <span class="corporate-numb">法人番号 10000000000000</span>
             </div>
-            <p class="footer-text">〒100-0000 東京都田田田田田田谷4丁目00番00号.
-                <span class="hover-liner-footer">
+            <div class="address">
+            <div>
+            <p class="footer-text">〒100-0000 東京都田田田田田田谷4丁目00番00号
+                <p class="footer-text">電話番号 03-0000-0000(代表)</p>
+                <p class="footer-text">ファクシミリ 03-0000-0000(広報広聴課)</p>
+                </div>
+                <span class="hover-liner-footer-button">
                     <span class="arrow-footer"></span>
                     このサイトについて</span>
-                <p class="footer-text">電話番号 03-0000-0000(代表)</p>
-                <p class="footer-text">ファクシミリ 03-0000-0000（広報広聴課）</p>
+                </div>
             </div>
             <div class="footer-white-box">
-                <div class="contact">
+                <!-- Icon for larger screens (above 360px) -->
+                <div class="contact contact-large">
                     <img class="contact-footer-icon" img="img" src="images/contact.svg">
                 </div>
                 <div class="white-box-right">
-                    <div class="contact-info-title">
+                    <!-- Icon for small screens (360px and below) - placed next to title -->
+                    <div class="contact-header-small">
+                        <div class="contact contact-small">
+                            <img class="contact-footer-icon contact-footer-icon-small" img="img" src="images/contact.svg">
+                        </div>
+                        <div class="contact-info-title">
+                            <p class="contact-hover-liner">
+                                <span class="arrow"></span>住まいに関する情報・相談・セミナー</p>
+                        </div>
+                    </div>
+                    
+                    <!-- This title shows on larger screens -->
+                    <div class="contact-info-title contact-info-title-large">
                         <p class="contact-hover-liner">
                             <span class="arrow"></span>住まいに関する情報・相談・セミナー</p>
                     </div>
@@ -392,17 +506,40 @@
                         <p class="p-white-box">ファクシミリ 03-0000-0000
                             <span class="contact-box-hover-liner">
                                 <span class="arrow"></span>入力フォーム</span>
-                        </div>
+                        </p>
                     </div>
                 </div>
             </div>
-            <div class="copyright">
-                <p class="mb-0">Copyright © Sategaya City All Rights Reserved.</p>
-            </section>
-        </footer>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="scripts/main.js"></script>
-    </body>
+        </div>
+        <div class="copyright">
+            <p class="mb-0">Copyright © Sategaya City All Rights Reserved.</p>
+        </section>
+    </footer>
+    <nav class="mobile-nav">
+                <div class="mobile-nav-item">
+                    <img class="img-icon-mobile" src="images/settings.svg" alt="settings">
+                    <p>HOME</p>
+                </div>
+                <div class="mobile-nav-item">
+                    <img class="img-icon-mobile" src="images/global.svg" alt="global">
+                    <p>検索<br>メニュー</p>
+                </div>
+                <div class="mobile-nav-item">
+                    <img class="img-icon-mobile" src="images/location.svg" alt="location">
+                    <p>混雑状況</p>
+                </div>
+                <div class="mobile-nav-item">
+                    <img class="img-icon-mobile" src="images/counter.svg" alt="counter">
+                    <p>アクセス</p>
+                </div>
+            </nav>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="node_modules/jquery-smooth-scroll/jquery.smooth-scroll.min.js"></script>
+    <script src="scripts/main.js"></script>
+
+</body>
 </html>
