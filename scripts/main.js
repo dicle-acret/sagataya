@@ -18,7 +18,7 @@ const footer = document.querySelector('footer');
 window.addEventListener("scroll", () => {
   const currentScroll = window.pageYOffset;
   const windowHeight = window.innerHeight;
-  const footerTop = footer.offsetTop;
+  const documentHeight = document.documentElement.scrollHeight;
   
   // Show button after scrolling 300px
   if (currentScroll > 300) {
@@ -27,7 +27,8 @@ window.addEventListener("scroll", () => {
     homeButton.classList.remove('is-visible');
   }
   
- if (currentScroll + windowHeight >= documentHeight - footer.offsetHeight - 20) {
+  // Position button above footer when near bottom
+  if (currentScroll + windowHeight >= documentHeight - footer.offsetHeight - 20) {
     homeButton.classList.add('at-footer');
   } else {
     homeButton.classList.remove('at-footer');
@@ -47,14 +48,33 @@ $(document).ready(function() {
       }
     }
   });
-});
 
-
-  $(document).ready(function(){
-    $('.autoplay').slick({
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 2000,
-    });
+  // Slick Carousel with responsive settings
+  $('.autoplay').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    arrows: true,
+    dots: false,
+    infinite: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+          dots: true
+        }
+      }
+    ]
   });
+});
