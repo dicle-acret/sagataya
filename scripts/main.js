@@ -35,8 +35,25 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// Magnific Popup
+// Wait for DOM and all scripts to load
 $(document).ready(function() {
+  console.log('Document ready'); // Debug log
+  
+  // Check if Slick is available
+  if (typeof $.fn.slick === 'undefined') {
+    console.error('Slick carousel not loaded!');
+    return;
+  }
+  
+  // Check if carousel element exists
+  if ($('.autoplay').length === 0) {
+    console.error('Carousel element not found!');
+    return;
+  }
+  
+  console.log('Initializing carousel...'); // Debug log
+  
+  // Magnific Popup
   $('.image-popup').magnificPopup({
     type: 'image',
     closeOnContentClick: true,
@@ -49,32 +66,37 @@ $(document).ready(function() {
     }
   });
 
-  // Slick Carousel with responsive settings
-  $('.autoplay').slick({
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    arrows: true,
-    dots: false,
-    infinite: true,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1
+  // Initialize Slick Carousel
+  try {
+    $('.autoplay').slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      arrows: true,
+      dots: false,
+      infinite: true,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            dots: true
+          }
         }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: false,
-          dots: true
-        }
-      }
-    ]
-  });
+      ]
+    });
+    console.log('Carousel initialized successfully!'); // Debug log
+  } catch (error) {
+    console.error('Error initializing carousel:', error);
+  }
 });
