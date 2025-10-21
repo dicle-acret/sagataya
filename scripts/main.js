@@ -36,45 +36,45 @@ window.addEventListener("scroll", () => {
 });
 
 // Magnific Popup
-$(document).ready(function() {
+$(document).ready(function () {
   $('.image-popup').magnificPopup({
     type: 'image',
     closeOnContentClick: true,
     mainClass: 'mfp-img-mobile',
     image: {
       verticalFit: true,
-      titleSrc: function(item) {
+      titleSrc: function (item) {
         return item.el.find('img').attr('alt');
       }
     }
   });
+});
+// memo3:⬆︎ちょっと修正
 
   // Slick Carousel with responsive settings
-  $('.autoplay').slick({
-    slidesToShow: 3,
+$(document).ready(function () {
+  $('.SlickAutoplay').slick({
+    slidesToShow: 2,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
-    arrows: true,
-    dots: false,
+		draggable:false,
+    arrows: false,
+    dots: true,
     infinite: true,
     responsive: [
       {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1
-        }
-      },
-      {
-        breakpoint: 600,
+        breakpoint: 980,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          arrows: false,
-          dots: true
+          arrows: true,
+          dots: false
         }
       }
     ]
   });
 });
+
+// memo3:⬆︎ちょっと修正
+
