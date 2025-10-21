@@ -22,6 +22,8 @@ color: #222;
 font-family: "Noto Sans JP", sans-serif;
 font-size: 18px;
 background: #fefefe;
+
+background: pink;
 }
 
 .header-wrapper {
@@ -584,12 +586,20 @@ border-bottom: 2px solid #1a3a7d;
 z-index: 1;
 }
 
+/* memo3:⬇︎追加 */
+.scroll-table{
+	width: 100%;
+	overflow-x: scroll;
+}
+
 .schedule-table {
 width: 100%;
 border-collapse: collapse;
 margin: 20px 0;
 font-size: 18px;
 background-color: white;
+/* memo3:⬇︎追加 */
+min-width: 1000px;
 }
 
 .schedule-table thead {
@@ -644,10 +654,11 @@ line-height: 2;
 line-height: 2.4;
 }
 
-@media screen and (max-width: 700px) {
+/* @media screen and (max-width: 700px) { */
+@media screen and (max-width: 640px) {
 .schedule-table {
-    font-size: 14px;
-    overflow-x: scroll;
+	font-size: 14px;
+	/* overflow-x: scroll; */
 }
 }
 
@@ -935,6 +946,10 @@ width: 80%;
   align-items: center;
   justify-content: center;
   transition: opacity 0.3s ease;
+
+	/* memo3:⬇︎追加 */
+	background: white;
+	border-radius: 50%;
 }
 
 .home-button.is-visible {
