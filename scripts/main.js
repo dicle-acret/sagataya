@@ -18,7 +18,8 @@ const footer = document.querySelector('footer');
 window.addEventListener("scroll", () => {
   const currentScroll = window.pageYOffset;
   const windowHeight = window.innerHeight;
-  const documentHeight = document.documentElement.scrollHeight;
+  const footerTop = footer.getBoundingClientRect().top + currentScroll;
+  const scrollBottom = currentScroll + windowHeight;
   
   // Show button after scrolling 300px
   if (currentScroll > 300) {
@@ -27,76 +28,49 @@ window.addEventListener("scroll", () => {
     homeButton.classList.remove('is-visible');
   }
   
-  // Position button above footer when near bottom
-  if (currentScroll + windowHeight >= documentHeight - footer.offsetHeight - 20) {
+  // Stick button to top of footer when footer is visible in viewport
+  if (scrollBottom >= footerTop + 50) {
     homeButton.classList.add('at-footer');
   } else {
     homeButton.classList.remove('at-footer');
   }
 });
 
-// Wait for DOM and all scripts to load
-$(document).ready(function() {
-  console.log('Document ready'); // Debug log
-  
-  // Check if Slick is available
-  if (typeof $.fn.slick === 'undefined') {
-    console.error('Slick carousel not loaded!');
-    return;
-  }
-  
-  // Check if carousel element exists
-  if ($('.autoplay').length === 0) {
-    console.error('Carousel element not found!');
-    return;
-  }
-  
-  console.log('Initializing carousel...'); // Debug log
-  
-  // Magnific Popup
+// Magnific Popup
+$(document).ready(function () {
   $('.image-popup').magnificPopup({
     type: 'image',
     closeOnContentClick: true,
     mainClass: 'mfp-img-mobile',
     image: {
       verticalFit: true,
-      titleSrc: function(item) {
+      titleSrc: function (item) {
         return item.el.find('img').attr('alt');
       }
     }
   });
+});
 
-  // Initialize Slick Carousel
-  try {
-    $('.autoplay').slick({
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 2000,
-      arrows: true,
-      dots: false,
-      infinite: true,
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1
-          }
-        },
-        {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: false,
-            dots: true
-          }
+$(document).ready(function () {
+  $('.SlickAutoplay').slick({
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    draggable: false,
+    arrows: true,
+    dots: true,
+    infinite: true,
+    responsive: [
+      {
+        breakpoint: 980,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: true,
+          dots: false
         }
-      ]
-    });
-    console.log('Carousel initialized successfully!'); // Debug log
-  } catch (error) {
-    console.error('Error initializing carousel:', error);
-  }
+      }
+    ]
+  });
 });
