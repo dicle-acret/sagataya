@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>テストページ</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link href="styles/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link href="styles/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -221,7 +221,8 @@
                         </div>
                     </div>
 
-                    <table id="reiwa-2025" class="schedule-table">
+                <div id="reiwa-2025" class="scroll-table">
+                    <table class="schedule-table">
                         <thead>
                             <tr>
                                 <th>回</th>
@@ -265,7 +266,7 @@
                             </tr>
                         </tbody>
                     </table>
-
+                </div>
                     <div class="target-capacity">
                         <p class="m-0">
                             <strong>対象者・定員</strong>
@@ -404,51 +405,60 @@
                             <p>Learn about Setagaya City</p>
                         </div>
 
-                        <div class="autoplay">
-                            <div class="carousel-item">
-                                <div class="carousel-image">
-                                    <img src="images/Slide.jpg" alt="Slide 1">
+                        <div class="SlickAutoplay">
+                            <div class="SlickCarouselItem">
+                                <div class="d-flex">
+                                <div class="SlickCarouselImage">
+                                    <img src="images/Slide.webp" alt="Slide">
                                 </div>
-                                <p class="hover-liner">Placeholder for Carousel</p>
+                                <div class="SlickCarouselText d-flex justify-content-center align-items-center">
+                                 <p class="hover-liner">Placeholder for Carousel</p>
                             </div>
+                          </div>
+                        </div>
 
-                            <div class="carousel-item">
-                                <div class="carousel-image">
-                                    <img src="images/Slide-2.jpg" alt="Slide 2">
+                        <div class="SlickCarouselItem">
+                            <div class="d-flex">
+                                <div class="SlickCarouselImage">
+                                    <img src="images/Slide-2.webp" alt="Slide">
                                 </div>
-                                <p class="hover-liner">Placeholder for Carousel</p>
-                            </div>
-
-                            <div class="carousel-item">
-                                <div class="carousel-image">
-                                    <img src="images/Slide-3.jpg" alt="Slide 3">
+                                <div class="SlickCarouselText d-flex justify-content-center align-items-center">
+                                    <p class="hover-liner">Placeholder for Carousel</p>
                                 </div>
-                                <p class="hover-liner">Placeholder for Carousel</p>
-                            </div>
-
-                            <div class="carousel-item">
-                                <div class="carousel-image">
-                                    <img src="images/Slide-4.jpg" alt="Slide 4">
-                                </div>
-                                <p class="hover-liner">Placeholder for Carousel</p>
                             </div>
                         </div>
-                    </div>
+
+                        <div class="SlickCarouselItem">
+					<div class="d-flex">
+						<div class="SlickCarouselImage">
+							<img src="images/Slide-3.webp" alt="Slide">
+						</div>
+						<div class="SlickCarouselText d-flex justify-content-center align-items-center">
+							<p class="hover-liner">Placeholder for Carousel</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="SlickCarouselItem">
+					<div class="d-flex">
+						<div class="SlickCarouselImage">
+							<img src="images/Slide-4.webp" alt="Slide">
+						</div>
+						<div class="SlickCarouselText d-flex justify-content-center align-items-center">
+							<p class="hover-liner">Placeholder for Carousel</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
                 </div>
             </section>
         </main>
         <a href="#top" class="home-button">
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="62"
-                height="62"
-                fill="#fefefe"
-                stroke="#002060"
-                class="bi bi-arrow-up-circle-fill"
-                viewbox="0 0 16 16">
-                <path
-                    d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
+		<path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z"/>
+	</svg>
         </a>
 
         <footer>
@@ -500,10 +510,7 @@
                                 <!-- Icon for small screens (360px and below) - placed next to title -->
                                 <div class="contact-header-small">
                                     <div class="contact contact-small">
-                                        <img
-                                            class="contact-footer-icon contact-footer-icon-small"
-                                            img="img"
-                                            src="images/contact.svg">
+                                        <img class="contact-footer-icon contact-footer-icon-small" img="img" src="images/contact.svg">
                                     </div>
                                     <div class="contact-info-title">
                                         <p class="contact-hover-liner">
@@ -555,6 +562,7 @@
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+                <script src="node_modules/jquery-smooth-scroll/jquery.smooth-scroll.min.js"></script>
                 <script src="scripts/main.js"></script>
 
             </body>
