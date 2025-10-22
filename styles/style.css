@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  max-width: 100%;
+ 
 }
 
 html {
@@ -576,6 +576,10 @@ h2 {
   border-bottom: 2px solid #1a3a7d;
   z-index: 1;
 }
+.scroll-table{
+	width: 100%;
+	overflow-x: scroll;
+}
 
 .schedule-table {
   width: 100%;
@@ -583,6 +587,7 @@ h2 {
   margin: 20px 0;
   font-size: 18px;
   background-color: white;
+  min-width: 1000px;
 }
 
 .schedule-table thead {
@@ -637,10 +642,9 @@ h2 {
   line-height: 2.4;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 640px) {
   .schedule-table {
       font-size: 14px;
-      overflow-x: scroll;
   }
 }
 
@@ -789,78 +793,98 @@ h2 {
 
 .popup-carousel {
   margin-top: 40px;
-  border: 1px solid #000000;
+  border: 2px solid #000000;
   display: flex;
+  align-items: center;
   overflow: hidden;
+  width: 100%;
+
 }
 
 .popup-carousel-title {
   background-color: #000000;
   color: #fefefe;
   padding: 20px;
-  width: 40%;
-
+  width: 30%;
+  min-height: 100%;
 }
 
 .popup-carousel-title h2 {
   padding: 0;
-  margin: 0;
+  margin: 120px 0px 0px 0px;
 }
 
 .popup-carousel-title p {
-  margin: 0;
+  margin: 0px 0px 120px 0px;
   padding: 0;
   text-indent: 0;
 }
 
-.autoplay {
+.SlickAutoplay {
   padding: 20px;
   background-color: #fff;
+  width: 70%;
+  min-width: 0;
+	height: 250px;
 }
 
-.carousel-item {
-  padding: 0 10px;
+.SlickCarouselItem {
+  padding: 0 20px;
+  width: 100%;
+  border-right: 1px grey solid;
 }
 
-.carousel-image {
+.SlickCarouselImage {
   width: 100%;
   height: 250px;
   overflow: hidden;
-  margin-bottom: 10px;
+  border: 1px solid transparent;
+  transition: border 0.1s ease;
 }
 
-.carousel-image img {
+.SlickCarouselImage:hover {
+  border: 2px solid #000;
+}
+
+.SlickCarouselImage img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
 }
 
-.carousel-item .hover-liner {
+.SlickCarouselImage:hover img {
+  transform: scale(1.1);
+}
+
+.SlickCarouselItem .hover-liner {
   text-align: center;
   margin: 10px 0;
   text-indent: 0;
+  padding-left: 10px;
 }
 
 /* Slick carousel arrows */
-.slick-next,
-.slick-prev {
+.slick-prev,
+.slick-next {
   width: 40px;
   height: 40px;
   z-index: 1;
 }
 
-.slick-next:before,
-.slick-prev:before {
-  font-size: 40px;
+.slick-prev:before,
+.slick-next:before {
+  font-size: 25px;
   color: #002060;
 }
 
 .slick-prev {
-  left: 10px;
+  left: -5px;
 }
 
 .slick-next {
-  right: 10px;
+  right: -5px;
 }
 
 /* Slick dots */
@@ -877,8 +901,8 @@ h2 {
   color: #002060;
 }
 
-@media screen and (max-width: 600px) {
-  .popup-carousel {
+@media screen and (max-width: 980px) {
+  .popup-carousel{
       flex-direction: column;
   }
 
@@ -889,16 +913,33 @@ h2 {
       align-items: center;
   }
 
-  .carousel-image {
-      height: 200px;
-  }
-
   .popup-carousel-title {
       padding: 15px;
   }
 
-  .autoplay {
+  .popup-carousel-title h2 {
+      padding: 15px;
+      margin: 0;
+  }
+
+    .popup-carousel-title p {
+      padding: 15px;
+      margin: 0;
+  }
+
+  .SlickAutoplay {
       padding: 15px 10px 40px;
+      width: 100%;
+		  height: 320px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+	.SlickCarouselItem>.d-flex{
+		flex-direction: column;
+	}
+  .SlickCarouselItem {
+  border: none;
   }
 }
 
@@ -912,6 +953,8 @@ h2 {
   align-items: center;
   justify-content: center;
   transition: opacity 0.3s ease;
+  background: white;
+  border-radius: 50%;
 }
 
 .home-button.is-visible {
@@ -944,27 +987,24 @@ h2 {
 
 footer {
   position: relative;
-  margin: 40px 0 20px;
+  margin: 40px 0 0;
   background-color: #002060;
   color: #fefefe;
   font-size: 14px;
   padding-top: 30px;
   padding-bottom: 10px;
-  margin-bottom: 0;
 }
 
 @media screen and (max-width: 560px) {
   .home-button {
       right: 10px;
-      bottom: 70px;
-      /* Above mobile nav */
+      bottom: 70px; /* Above mobile nav */
   }
 
   .home-button.at-footer {
       right: 10px;
-      top: -22px;
+      top: -25px;
   }
-
 }
 
 .footer-links {
@@ -1317,7 +1357,7 @@ footer {
   }
 
   footer {
-      margin-bottom: 40px;
+      margin-bottom: 70px;
   }
 
   /* Hide large screen icon */
