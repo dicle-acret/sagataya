@@ -11,31 +11,42 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// Back to top button
 const homeButton = document.querySelector('.home-button');
 const footer = document.querySelector('footer');
-
-window.addEventListener("scroll", () => {
-  const currentScroll = window.pageYOffset;
+ 
+const originalParent = homeButton.parentNode;
+const placeholder = document.createComment('home-button placeholder');
+originalParent.insertBefore(placeholder, homeButton.nextSibling);
+ 
+if (getComputedStyle(footer).position === 'static') {
+  footer.style.position = 'relative';
+}
+ 
+function onScroll() {
+  const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
   const windowHeight = window.innerHeight;
+ 
   const footerTop = footer.getBoundingClientRect().top + currentScroll;
+ 
   const scrollBottom = currentScroll + windowHeight;
-  
-  // Show button after scrolling 300px
-  if (currentScroll > 300) {
-    homeButton.classList.add('is-visible');
+ 
+  const reachedFooter = scrollBottom >= footerTop;
+ 
+  if (reachedFooter) {
+    if (!homeButton.classList.contains('at-footer')) {
+      footer.appendChild(homeButton);
+      homeButton.classList.add('at-footer');
+    }
   } else {
-    homeButton.classList.remove('is-visible');
+    if (homeButton.classList.contains('at-footer')) {
+      originalParent.insertBefore(homeButton, placeholder);
+      homeButton.classList.remove('at-footer');
+    }
   }
-  
-  // Stick button to top of footer when footer is visible in viewport
-  if (scrollBottom >= footerTop + 50) {
-    homeButton.classList.add('at-footer');
-  } else {
-    homeButton.classList.remove('at-footer');
-  }
-});
-
+}
+ 
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
 // Magnific Popup
 $(document).ready(function () {
   $('.image-popup').magnificPopup({
