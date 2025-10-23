@@ -947,26 +947,21 @@ h2 {
   position: fixed;
   right: 20px;
   bottom: 20px;
-  z-index: 100;
+  z-index: 9999;
   cursor: pointer;
-  display: none;
   align-items: center;
   justify-content: center;
   transition: opacity 0.3s ease;
   background: white;
   border-radius: 50%;
-}
 
-.home-button.is-visible {
-  display: flex;
-  animation: slideUp 0.65s ease-out;
 }
 
 .home-button.at-footer {
   position: absolute;
   bottom: auto;
   right: 20px;
-  top: -25px;
+  top: -12px;
 }
 
 @keyframes slideUp {
