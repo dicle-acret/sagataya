@@ -358,6 +358,7 @@ body {
       height: 60px;
       gap: 10px;
       padding: 0;
+
   }
 
   .search-btn {
@@ -790,14 +791,47 @@ h2 {
   width: 80%;
 }
 
+/* POPUP CAROUSEL - UPDATED STYLES */
 .popup-carousel {
-  margin-top: 40px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
   border: 2px solid #000000;
   display: flex;
   align-items: center;
   overflow: hidden;
   width: 100%;
+  z-index: 50;
+  background-color: #fff;
+  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s ease;
+  opacity: 0;
+  transform: translateY(100%);
+    max-width: 1220px;
+  margin: 0 auto;
+  visibility: hidden;
+}
 
+.popup-carousel.scrolled {
+  position: static;
+  margin-top: 40px;
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  transition: none;
+}
+
+.popup-carousel.at-bottom {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+.popup-carousel.hidden-carousel {
+  opacity: 0;
+  transform: translateY(100%);
+  visibility: hidden;
 }
 
 .popup-carousel-title {
@@ -831,6 +865,7 @@ h2 {
   padding: 0 20px;
   width: 100%;
   border-right: 1px grey solid;
+  cursor: pointer;
 }
 
 .SlickCarouselImage {
@@ -841,7 +876,7 @@ h2 {
   transition: border 0.1s ease;
 }
 
-.SlickCarouselImage:hover {
+.SlickCarouselItem:hover .SlickCarouselImage {
   border: 2px solid #000;
 }
 
@@ -853,7 +888,7 @@ h2 {
   transition: transform 0.4s ease;
 }
 
-.SlickCarouselImage:hover img {
+.SlickCarouselItem:hover .SlickCarouselImage img {
   transform: scale(1.1);
 }
 
@@ -862,6 +897,10 @@ h2 {
   margin: 10px 0;
   text-indent: 0;
   padding-left: 10px;
+}
+
+.SlickCarouselItem:hover .hover-liner::after {
+  width: 80%;
 }
 
 /* Slick carousel arrows */
@@ -879,16 +918,16 @@ h2 {
 }
 
 .slick-prev {
-  left: -5px;
+  left: -2px;
 }
 
 .slick-next {
-  right: -5px;
+  right: -2px;
 }
 
 /* Slick dots */
 .slick-dots {
-  bottom: -30px;
+  bottom: -55px;
 }
 
 .slick-dots li button:before {
@@ -942,6 +981,17 @@ h2 {
   }
 }
 
+@media screen and (max-width: 560px) {
+  .popup-carousel {
+      bottom: 70px; /* Above mobile nav */
+  }
+  
+  .popup-carousel.scrolled {
+      bottom: 0;
+  }
+}
+
+/* HOME BUTTON STYLES */
 .home-button {
   position: fixed;
   right: 20px;
@@ -950,10 +1000,14 @@ h2 {
   cursor: pointer;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
   background: white;
   border-radius: 50%;
+}
 
+.home-button.hidden {
+  opacity: 0;
+  visibility: hidden;
 }
 
 .home-button.at-footer {
@@ -979,16 +1033,6 @@ h2 {
   height: 24px;
 }
 
-footer {
-  position: relative;
-  margin: 40px 0 0;
-  background-color: #002060;
-  color: #fefefe;
-  font-size: 14px;
-  padding-top: 30px;
-  padding-bottom: 10px;
-}
-
 @media screen and (max-width: 560px) {
   .home-button {
       right: 10px;
@@ -999,6 +1043,16 @@ footer {
       right: 10px;
       top: -25px;
   }
+}
+
+footer {
+  position: relative;
+  margin: 40px 0 0;
+  background-color: #002060;
+  color: #fefefe;
+  font-size: 14px;
+  padding-top: 30px;
+  padding-bottom: 10px;
 }
 
 .footer-links {
@@ -1256,7 +1310,7 @@ footer {
   width: 80%;
 }
 
-@media screen and (max-width: 1030px) {
+@media screen and (max-width: 1090px) {
 
   .footer-box {
       flex-direction: column;
@@ -1306,6 +1360,7 @@ footer {
   margin: 0;
   background-color: #003087;
   padding: 10px 10px 10px 20px;
+  z-index: 100;
 }
 
 .mobile-nav-item {
